@@ -33,6 +33,9 @@ export class PrivateComponent {
 
   fixs: Array<{ fix_id: number, error: string, description: string, phonePhoneId:number, createdAt:Date}> = [];
 
+  
+  
+
   constructor(
     private authService: AuthService
   ){}
@@ -78,7 +81,7 @@ export class PrivateComponent {
 
   fixAll(){
     this.authService.fixList(this.fix).subscribe((res:any)=>{
-      this.fixs = res.data;
+      this.fixs = res.data.reverse();
     })
   }
   
