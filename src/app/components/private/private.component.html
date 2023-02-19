@@ -1,0 +1,165 @@
+<p>
+  <a
+    class="btn btn-primary m-2"
+    data-bs-toggle="collapse"
+    href="#collapseExample"
+    role="button"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+  >
+    Customers
+  </a>
+  <button
+    class="btn btn-primary m-2"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#collapseExample1"
+    aria-expanded="false"
+    aria-controls="collapseExample1"
+  >
+    Phones
+  </button>
+  <button
+    class="btn btn-primary m-2"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#collapseExample2"
+    aria-expanded="false"
+    aria-controls="collapseExample2"
+  >
+    Fix
+  </button>
+</p>
+<div class="collapse mb-5" id="collapseExample">
+  <div class="card card-body">
+    <h1 class="mb-3">Customers</h1>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">name</label>
+      <input [(ngModel)]="customer.name" type="email" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Last name</label
+      >
+      <input [(ngModel)]="customer.lastName" type="text" class="form-control" />
+    </div>
+    <button class="btn btn-primary m-3 mb-5" (click)="customerAdd()">
+      Create Customer
+    </button>
+    <h3 class="mb-3">Customers List</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr></tr>
+        <tr *ngFor="let customer of customers">
+          <th scope="row">{{ customer.id_customer }}</th>
+          <td>{{ customer.name }}</td>
+          <td>{{ customer.lastName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="collapse mb-5" id="collapseExample1">
+  <div class="card card-body">
+    <h1 class="mb-3">Phones</h1>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Customer Id</label
+      >
+      <input
+        [(ngModel)]="phone.customerIdCustomer"
+        type="text"
+        class="form-control"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Phone Number</label
+      >
+      <input
+        [(ngModel)]="phone.phone_number"
+        type="text"
+        class="form-control"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Model</label>
+      <input [(ngModel)]="phone.model" type="text" class="form-control" />
+    </div>
+    <button class="btn btn-primary m-3 mb-5" (click)="phoneAdd()">
+      Create Phone
+    </button>
+    <h1 class="mb-3">Phones List</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Phone Id</th>
+          <th scope="col">Customer Id</th>
+          <th scope="col">Number</th>
+          <th scope="col">Model</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr></tr>
+        <tr *ngFor="let phone of phones">
+          <th scope="row">{{ phone.phone_id }}</th>
+          <td>{{ phone.customerIdCustomer }}</td>
+          <td>{{ phone.phone_number }}</td>
+          <td>{{ phone.model }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="collapse mb-5" id="collapseExample2">
+  <div class="card card-body">
+    <h1 class="mb-3">Fixed Up</h1>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Phone Id</label>
+      <input [(ngModel)]="fix.phonePhoneId" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Fix Error</label>
+      <input [(ngModel)]="fix.error" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Model</label>
+      <input [(ngModel)]="fix.description" type="text" class="form-control" />
+    </div>
+    <button class="btn btn-primary m-3 mb-5" (click)="fixAdd()">
+      Create fixed up
+    </button>
+    <h1 class="mb-3">Fixed up List</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Fix Id</th>
+          <th scope="col">Phone Id</th>
+          <th scope="col">Error</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr></tr>
+        <tr *ngFor="let fix of fixs">
+          <th scope="row">{{ fix.fix_id }}</th>
+          <td>{{ fix.phonePhoneId }}</td>
+          <td>{{ fix.error }}</td>
+          <td>{{ fix.description }}</td>
+          <td>{{ fix.createdAt }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
