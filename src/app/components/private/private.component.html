@@ -43,6 +43,10 @@
       >
       <input [(ngModel)]="customer.lastName" type="text" class="form-control" />
     </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">DNI</label>
+      <input [(ngModel)]="customer.dni" type="text" class="form-control" />
+    </div>
     <button class="btn btn-primary m-3 mb-5" (click)="customerAdd()">
       Create Customer
     </button>
@@ -52,6 +56,7 @@
       <thead>
         <tr>
           <th scope="col">Id</th>
+          <th scope="col">DNI</th>
           <th scope="col">Name</th>
           <th scope="col">Last Name</th>
         </tr>
@@ -60,6 +65,7 @@
         <tr></tr>
         <tr *ngFor="let customer of customers">
           <th scope="row">{{ customer.id_customer }}</th>
+          <td>{{ customer.dni }}</td>
           <td>{{ customer.name }}</td>
           <td>{{ customer.lastName }}</td>
         </tr>
@@ -72,13 +78,9 @@
     <h1 class="mb-3">Phones</h1>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label"
-        >Customer Id</label
+        >Customer DNI</label
       >
-      <input
-        [(ngModel)]="phone.customerIdCustomer"
-        type="text"
-        class="form-control"
-      />
+      <input [(ngModel)]="phone.customerDni" type="text" class="form-control" />
     </div>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label"
@@ -90,6 +92,7 @@
         class="form-control"
       />
     </div>
+
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Model</label>
       <input [(ngModel)]="phone.model" type="text" class="form-control" />
@@ -103,7 +106,7 @@
       <thead>
         <tr>
           <th scope="col">Phone Id</th>
-          <th scope="col">Customer Id</th>
+          <th scope="col">Customer DNI</th>
           <th scope="col">Number</th>
           <th scope="col">Model</th>
         </tr>
@@ -112,7 +115,7 @@
         <tr></tr>
         <tr *ngFor="let phone of phones">
           <th scope="row">{{ phone.phone_id }}</th>
-          <td>{{ phone.customerIdCustomer }}</td>
+          <td>{{ phone.customerDni }}</td>
           <td>{{ phone.phone_number }}</td>
           <td>{{ phone.model }}</td>
         </tr>
@@ -124,15 +127,19 @@
   <div class="card card-body">
     <h1 class="mb-3">Fixed Up</h1>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Phone Id</label>
-      <input [(ngModel)]="fix.phonePhoneId" type="text" class="form-control" />
+      <label for="exampleFormControlInput1" class="form-label"
+        >Phone Number</label
+      >
+      <input [(ngModel)]="fix.phoneNumber" type="text" class="form-control" />
     </div>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Fix Error</label>
       <input [(ngModel)]="fix.error" type="text" class="form-control" />
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Model</label>
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Description</label
+      >
       <input [(ngModel)]="fix.description" type="text" class="form-control" />
     </div>
     <button class="btn btn-primary m-3 mb-5" (click)="fixAdd()">
@@ -144,7 +151,7 @@
       <thead>
         <tr>
           <th scope="col">Fix Id</th>
-          <th scope="col">Phone Id</th>
+          <th scope="col">Phone Number</th>
           <th scope="col">Error</th>
           <th scope="col">Description</th>
           <th scope="col">Date</th>
@@ -154,7 +161,7 @@
         <tr></tr>
         <tr *ngFor="let fix of fixs">
           <th scope="row">{{ fix.fix_id }}</th>
-          <td>{{ fix.phonePhoneId }}</td>
+          <td>{{ fix.phoneNumber }}</td>
           <td>{{ fix.error }}</td>
           <td>{{ fix.description }}</td>
           <td>{{ fix.createdAt }}</td>

@@ -11,27 +11,29 @@ export class PrivateComponent {
 
   customer = {
     name: '',
-    lastName: ''
+    lastName: '',
+    dni:''
   };
 
   phone={
     customerIdCustomer:'' ,
     phone_number:'' ,
-    model:''
+    model:'',
+    customerDni:''
   }
 
   fix={
-    
     phonePhoneId:'',
     error:'',
-    description:''
+    description:'',
+    phoneNumber:''
   }
 
-  customers: Array<{ id_customer: number, name: string, lastName: string }> = [];
+  customers: Array<{ id_customer: number, name: string, lastName: string, dni: number}> = [];
 
-  phones: Array<{ phone_id: number, phone_number: number, model: string, customerIdCustomer:number}> = [];
+  phones: Array<{ phone_id: number, phone_number: number, model: string, customerDni:number}> = [];
 
-  fixs: Array<{ fix_id: number, error: string, description: string, phonePhoneId:number, createdAt:Date}> = [];
+  fixs: Array<{ fix_id: number, error: string, description: string, phoneNumber:string, createdAt:Date}> = [];
 
   
   
