@@ -47,7 +47,11 @@
       <label for="exampleFormControlTextarea1" class="form-label">DNI</label>
       <input [(ngModel)]="customer.dni" type="text" class="form-control" />
     </div>
-    <button class="btn btn-primary m-3 mb-5" (click)="customerAdd()">
+    <button
+      class="btn btn-primary m-3 mb-5"
+      (click)="customerAdd()"
+      (click)="customerAll()"
+    >
       Create Customer
     </button>
     <h3 class="mb-3">Customers List</h3>
@@ -97,7 +101,11 @@
       <label for="exampleFormControlTextarea1" class="form-label">Model</label>
       <input [(ngModel)]="phone.model" type="text" class="form-control" />
     </div>
-    <button class="btn btn-primary m-3 mb-5" (click)="phoneAdd()">
+    <button
+      class="btn btn-primary m-3 mb-5"
+      (click)="phoneAdd()"
+      (click)="phoneAll()"
+    >
       Create Phone
     </button>
     <h1 class="mb-3">Phones List</h1>
@@ -142,7 +150,11 @@
       >
       <input [(ngModel)]="fix.description" type="text" class="form-control" />
     </div>
-    <button class="btn btn-primary m-3 mb-5" (click)="fixAdd()">
+    <button
+      class="btn btn-primary m-3 mb-5"
+      (click)="fixAdd()"
+      (click)="fixAll()"
+    >
       Create fixed up
     </button>
     <h1 class="mb-3">Fixed up List</h1>
